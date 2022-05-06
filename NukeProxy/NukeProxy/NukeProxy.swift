@@ -18,9 +18,19 @@ public class ImagePipeline : NSObject {
     public static let shared = ImagePipeline()
     
     @objc
-    public func setCacheStrategy() -> Void {
-        Nuke.ImagePipeline {
-            $0.data =
+    public func setCacheStrategy(cacheStrategy: DataCachingStrategy, cacheName: String, sizeLimit: Int) -> Void {
+        switch cacheStrategy {
+        case .withUrlCache:
+            Nuke.ImagePipeline.shared = Nuke.ImagePipeline(configuration: .withURLCache)
+        case .withDataCache:
+            Nuke.ImagePipeline.shared = Nuke.ImagePipeline(configuration: .withDataCache)
+            
+            let specifiedDataCache = try? Nuke.DataCache(name: cacheName)
+            specifiedDataCache?.sizeLimit = sizeLimit
+            
+            Nuke.ImagePipeline.shared = Nuke.ImagePipeline {
+                $0.dataCache = specifiedDataCache
+            }
         }
     }
     
@@ -93,8 +103,6 @@ public final class ImageCache: NSObject {
     }
 }
 
-pub
-
 @objc(DataLoader)
 public final class DataLoader: NSObject {
     
@@ -136,4 +144,10 @@ public final class Prefetcher: NSObject {
     public func unPause() {
         prefetcher.isPaused = false
     }
+}
+
+@objc (DataCachingStrategy)
+public enum DataCachingStrategy: Int {
+    case withUrlCache
+    case withDataCache
 }

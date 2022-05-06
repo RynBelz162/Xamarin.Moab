@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+
+  <metadata>
+
+    <id>Xamarin.Moab</id>
+    <version>$version$</version>
+    <title>Xamarin.Moab</title>
+    <authors>Ryan Belz</authors>
+    <owners>rynbelz162</owners>
+    <projectUrl>https://github.com/rynbelz162/Xamarin.Moab</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+
+    <summary>Xamarin.iOS binding library for Nuke</summary>
+
+    <description>
+Xamarin.iOS binding library for Nuke Nuke 10.9.0 (https://github.com/kean/Nuke/releases/tag/10.9.0)
+    </description>
+
+    <dependencies>
+      <group targetFramework="Xamarin.iOS15">
+      </group>
+    </dependencies>
+
+  </metadata>
+
+  <files>
+    <!--Xamarin.iOS-->
+    <file src="bin\Release\NativeLibrary.dll" target="lib\Xamarin.iOS15\NativeLibrary.dll" />
+    <file src="bin\Release\NativeLibrary.pdb" target="lib\Xamarin.iOS15\NativeLibrary.pdb" />
+  </files>
+
+</package>
