@@ -19,6 +19,9 @@ Cartfile.resolved
 /NukeProxy/output/*
 /NukeProxy/build/*
 
+# Ignore nuget packages
+/Xaamrin.Moab/*.nupkg
+
 # Mac bundle stuff
 *.dmg
 *.app

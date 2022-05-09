@@ -10,6 +10,7 @@
     <owners>rynbelz162</owners>
     <projectUrl>https://github.com/rynbelz162/Xamarin.Moab</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <license type="expression">MIT</license>
 
     <summary>Xamarin.iOS binding library for Nuke</summary>
 
@@ -18,7 +19,7 @@ Xamarin.iOS binding library for Nuke Nuke 10.9.0 (https://github.com/kean/Nuke/r
     </description>
 
     <dependencies>
-      <group targetFramework="Xamarin.iOS15">
+      <group targetFramework="Xamarin.iOS10">
       </group>
     </dependencies>
 
@@ -26,8 +27,8 @@ Xamarin.iOS binding library for Nuke Nuke 10.9.0 (https://github.com/kean/Nuke/r
 
   <files>
     <!--Xamarin.iOS-->
-    <file src="bin\Release\NativeLibrary.dll" target="lib\Xamarin.iOS15\NativeLibrary.dll" />
-    <file src="bin\Release\NativeLibrary.pdb" target="lib\Xamarin.iOS15\NativeLibrary.pdb" />
+    <file src="bin\Release\NativeLibrary.dll" target="lib\Xamarin.iOS10\NativeLibrary.dll" />
+    <file src="bin\Release\NativeLibrary.pdb" target="lib\Xamarin.iOS10\NativeLibrary.pdb" />
   </files>
 
 </package>
