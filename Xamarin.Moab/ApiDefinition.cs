@@ -3,7 +3,7 @@ using Foundation;
 using ObjCRuntime;
 using UIKit;
 
-namespace Xamarin.Nuke
+namespace Xamarin.Moab
 {
 	// @interface DataLoader : NSObject
 	[BaseType(typeof(NSObject))]

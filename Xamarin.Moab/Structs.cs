@@ -1,6 +1,6 @@
 ﻿using ObjCRuntime;
 
-namespace Xamarin.Nuke
+namespace Xamarin.Moab
 {
 	[Native]
 	public enum DataCachingStrategy : long

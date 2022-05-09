@@ -27,8 +27,8 @@ Xamarin.iOS binding library for Nuke Nuke 10.9.0 (https://github.com/kean/Nuke/r
 
   <files>
     <!--Xamarin.iOS-->
-    <file src="bin\Release\NativeLibrary.dll" target="lib\Xamarin.iOS10\NativeLibrary.dll" />
-    <file src="bin\Release\NativeLibrary.pdb" target="lib\Xamarin.iOS10\NativeLibrary.pdb" />
+    <file src="bin\Release\XamarinMoab.dll" target="lib\Xamarin.iOS10\XamarinMoab.dll" />
+    <file src="bin\Release\XamarinMoab.pdb" target="lib\Xamarin.iOS10\XamarinMoab.pdb" />
   </files>
 
 </package>

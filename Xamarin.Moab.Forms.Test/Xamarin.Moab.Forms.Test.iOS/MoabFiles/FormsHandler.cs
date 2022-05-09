@@ -8,7 +8,7 @@ namespace Xamarin.Moab.Forms.Test.iOS.MoabFiles
         private const string WarningSeverity = "WNG|";
         private const string DebugSeverity = "DBG|";
 
-        private const string LogTag = "|Nuke|";
+        private const string LogTag = "|Moab|";
 
         /// <summary>
         /// A flag indicating if Debug logging is enabled.
@@ -33,7 +33,7 @@ namespace Xamarin.Moab.Forms.Test.iOS.MoabFiles
             MoabHelper.Preserve();
 
 
-            Console.WriteLine(GetLogPrefix(DebugSeverity) + $"Initializing Xamarin.Forms.Nuke with {{ debug: {debug}, disableFileImageSourceHandling: {disableFileImageSourceHandling} }}");
+            Console.WriteLine(GetLogPrefix(DebugSeverity) + $"Initializing Moab with {{ debug: {debug}, disableFileImageSourceHandling: {disableFileImageSourceHandling} }}");
         }
 
         internal static void Warn(string message)
