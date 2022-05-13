@@ -21,17 +21,18 @@ cp -R "$SWIFT_BUILD_PATH/Release-iphonesimulator/Nuke.framework/Modules/Nuke.swi
 cp -R "$SWIFT_BUILD_PATH/Release-iphonesimulator/NukeProxy.framework/Modules/NukeProxy.swiftmodule/" "$SWIFT_BUILD_PATH/Release-fat/NukeProxy.framework/Modules/NukeProxy.swiftmodule/"
 
 echo "Combine iphoneos + iphonesimulator configuration as fat libraries"
+lipo -remove arm64 "$SWIFT_BUILD_PATH/Release-iphonesimulator/Nuke.framework/Nuke" -output "$SWIFT_BUILD_PATH/Release-iphonesimulator/Nuke.framework/Nuke"
 lipo -create -output "$SWIFT_BUILD_PATH/Release-fat/Nuke.framework/Nuke" "$SWIFT_BUILD_PATH/Release-iphoneos/Nuke.framework/Nuke" "$SWIFT_BUILD_PATH/Release-iphonesimulator/Nuke.framework/Nuke"
 lipo -create -output "$SWIFT_BUILD_PATH/Release-fat/NukeProxy.framework/NukeProxy" "$SWIFT_BUILD_PATH/Release-iphoneos/NukeProxy.framework/NukeProxy" "$SWIFT_BUILD_PATH/Release-iphonesimulator/NukeProxy.framework/NukeProxy"
 
 echo "Verify results"
-lipo -info "$SWIFT_BUILD_PATH/Release-iphonesimulator/Nuke.framework/Nuke"
+lipo -info "$SWIFT_BUILD_PATH/Release-fat/Nuke.framework/Nuke"
 lipo -info "$SWIFT_BUILD_PATH/Release-fat/NukeProxy.framework/NukeProxy"
 
 echo "Copy fat frameworks to the output folder"
 rm -Rf "$SWIFT_OUTPUT_PATH"
 mkdir -p "$SWIFT_OUTPUT_PATH"
-cp -Rf "$SWIFT_BUILD_PATH/Release-iphonesimulator/Nuke.framework" "$SWIFT_OUTPUT_PATH"
+cp -Rf "$SWIFT_BUILD_PATH/Release-fat/Nuke.framework" "$SWIFT_OUTPUT_PATH"
 cp -Rf "$SWIFT_BUILD_PATH/Release-fat/$SWIFT_PROJECT_NAME.framework" "$SWIFT_OUTPUT_PATH"
 
 echo "Generating binding api definition and structs"
