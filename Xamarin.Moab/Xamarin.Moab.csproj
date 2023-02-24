@@ -48,10 +48,6 @@
     <ObjcBindingCoreSource Include="Structs.cs" />
   </ItemGroup>
   <ItemGroup>
-    <NativeReference Include="..\framework_output\Nuke.framework">
-      <Kind>Framework</Kind>
-      <SmartLink>False</SmartLink>
-    </NativeReference>
     <NativeReference Include="..\framework_output\NukeProxy.framework">
       <Kind>Framework</Kind>
       <SmartLink>False</SmartLink>

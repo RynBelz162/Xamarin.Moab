@@ -7,16 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9413293629A954620079213F /* Nuke in Frameworks */ = {isa = PBXBuildFile; productRef = 9413293529A954620079213F /* Nuke */; };
+		9413293829A954620079213F /* NukeExtensions in Frameworks */ = {isa = PBXBuildFile; productRef = 9413293729A954620079213F /* NukeExtensions */; };
 		9461A1D428247E20008883EF /* NukeProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = 9461A1D328247E20008883EF /* NukeProxy.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9461A1E428247F94008883EF /* NukeProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9461A1E328247F94008883EF /* NukeProxy.swift */; };
-		94A62E852824B2A900EC2686 /* Nuke.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94A62E842824B2A900EC2686 /* Nuke.xcframework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		9461A1D028247E20008883EF /* NukeProxy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NukeProxy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9461A1D328247E20008883EF /* NukeProxy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NukeProxy.h; sourceTree = "<group>"; };
 		9461A1E328247F94008883EF /* NukeProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NukeProxy.swift; sourceTree = "<group>"; };
-		94A62E842824B2A900EC2686 /* Nuke.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Nuke.xcframework; path = ../Carthage/Build/Nuke.xcframework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -24,7 +24,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				94A62E852824B2A900EC2686 /* Nuke.xcframework in Frameworks */,
+				9413293629A954620079213F /* Nuke in Frameworks */,
+				9413293829A954620079213F /* NukeExtensions in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,7 +61,6 @@
 		94E64BC128249BD800D95D6B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				94A62E842824B2A900EC2686 /* Nuke.xcframework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -94,6 +94,8 @@
 			);
 			name = NukeProxy;
 			packageProductDependencies = (
+				9413293529A954620079213F /* Nuke */,
+				9413293729A954620079213F /* NukeExtensions */,
 			);
 			productName = NukeProxy;
 			productReference = 9461A1D028247E20008883EF /* NukeProxy.framework */;
@@ -124,6 +126,7 @@
 			);
 			mainGroup = 9461A1C628247E20008883EF;
 			packageReferences = (
+				9413293429A954620079213F /* XCRemoteSwiftPackageReference "Nuke" */,
 			);
 			productRefGroup = 9461A1D128247E20008883EF /* Products */;
 			projectDirPath = "";
@@ -371,6 +374,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		9413293429A954620079213F /* XCRemoteSwiftPackageReference "Nuke" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kean/Nuke.git";
+			requirement = {
+				kind = exactVersion;
+				version = 11.6.4;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		9413293529A954620079213F /* Nuke */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9413293429A954620079213F /* XCRemoteSwiftPackageReference "Nuke" */;
+			productName = Nuke;
+		};
+		9413293729A954620079213F /* NukeExtensions */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9413293429A954620079213F /* XCRemoteSwiftPackageReference "Nuke" */;
+			productName = NukeExtensions;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 9461A1C728247E20008883EF /* Project object */;
 }

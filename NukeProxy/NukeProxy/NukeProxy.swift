@@ -10,6 +10,7 @@
 import Foundation
 import UIKit
 import Nuke
+import NukeExtensions
 
 @objc(ImagePipeline)
 public class ImagePipeline : NSObject {
@@ -36,8 +37,11 @@ public class ImagePipeline : NSObject {
     
     @objc
     public func loadImage(url: URL, onCompleted: @escaping (UIImage?, String) -> Void) {
+        
+        let request = ImageRequest(url: url)
+
         _ = Nuke.ImagePipeline.shared.loadImage(
-            with: url,
+            with: request,
             progress: nil,
             completion: { result in
                 switch result {
@@ -50,17 +54,17 @@ public class ImagePipeline : NSObject {
         )
     }
     
-    @objc
+    @MainActor @objc
     public func loadImage(url: URL, placeholder: UIImage?, errorImage: UIImage?, into: UIImageView) {
         let options = ImageLoadingOptions(placeholder:placeholder, failureImage: errorImage)
-        Nuke.loadImage(with: url, options: options, into: into)
+        NukeExtensions.loadImage(with: url, options: options, into: into)
     }
     
-    @objc
+    @MainActor @objc
     public func loadImage(url: URL, imageIdKey: String, placeholder: UIImage?, errorImage: UIImage?, into: UIImageView) {
         let options = ImageLoadingOptions(placeholder: placeholder, failureImage: errorImage)
         
-        Nuke.loadImage(with: ImageRequest(
+        NukeExtensions.loadImage(with: ImageRequest(
             url: url,
             userInfo: [.imageIdKey: imageIdKey]
         ), options: options, into: into)
@@ -77,7 +81,7 @@ public class ImagePipeline : NSObject {
             with: ImageRequest(
                 url: url,
                 options: reloadIgnoringCachedData ? [.reloadIgnoringCachedData] : [],
-                userInfo: [.imageIdKey: imageIdKey]
+                userInfo: [.imageIdKey: imageIdKey!]
             ),
             completion: { result in
                 switch result {

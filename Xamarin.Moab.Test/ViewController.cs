@@ -18,9 +18,25 @@ namespace Xamarin.Moab.Test
 
             var image = new UIImageView
             {
-                TranslatesAutoresizingMaskIntoConstraints = false
+                TranslatesAutoresizingMaskIntoConstraints = false,
             };
+
             Add(image);
+
+            var image2 = new UIImageView
+            {
+                TranslatesAutoresizingMaskIntoConstraints = false,
+            };
+
+            Add(image2);
+
+            var image3 = new UIImageView
+            {
+                TranslatesAutoresizingMaskIntoConstraints = false,
+            };
+
+            Add(image3);
+
 
             // 150 MB
             nint cacheLimit = 1024 * 1024 * 150;
@@ -29,6 +45,16 @@ namespace Xamarin.Moab.Test
             ImagePipeline.Shared.LoadImageWithUrl(
                 new NSUrl("https://placekitten.com/g/300/300"),
                 (img, url) => image.Image = img);
+
+
+            ImagePipeline.Shared.LoadImageWithUrl(
+                new NSUrl("https://placekitten.com/g/600/600"),
+                (img, url) => image2.Image = img);
+
+
+            ImagePipeline.Shared.LoadImageWithUrl(
+                new NSUrl("https://placekitten.com/g/1000/1000"),
+                (img, url) => image3.Image = img);
         }
 
         public override void DidReceiveMemoryWarning()
