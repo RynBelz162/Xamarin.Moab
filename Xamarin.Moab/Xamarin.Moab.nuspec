@@ -15,7 +15,7 @@
     <summary>Xamarin.iOS binding library for Nuke</summary>
 
     <description>
-Xamarin.iOS binding library for Nuke Nuke 10.9.0 (https://github.com/kean/Nuke/releases/tag/10.9.0)
+Xamarin.iOS binding library for Nuke Nuke 11.6.4 (https://github.com/kean/Nuke/releases/tag/11.6.4)
     </description>
 
     <dependencies>

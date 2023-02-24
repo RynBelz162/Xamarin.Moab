@@ -1,10 +1,19 @@
 # ☢️ Xamarin.Moab
+[![NuGet version (Xamarin.Moab)](https://img.shields.io/nuget/v/Xamarin.Moab.svg?style=flat-square)](https://www.nuget.org/packages/Xamarin.Moab/)
+
+
 This repository is a Xamarin.iOS swift binding library for the popular [Nuke](https://kean.blog/nuke/home).
 
 This repository is also inspired by the popular [Xamarin.Forms.Nuke](https://github.com/roubachof/Xamarin.Forms.Nuke).
 
 This project currently binds for the `11.6.4` version of `Nuke`
 This project also currently builds using iOS verion 16.2 as specified in `build-fat.sh`
+
+# ⚠️ Disclaimer ⚠️
+- This package is very "Your milage may vary".
+- I no longer really work much with Xamarin.
+- The Enterprise application this was being mainly used in no longer is being developed. 
+- It is not hard tested to make sure there are no crashes or hiccups so may not be suitable for use enterprise level software.
 
 ### 📝 Steps to make changes to binding coverage
 - Open the `NukeProxy` xcode project.
